@@ -9,6 +9,8 @@ import rainyDay from "../assets/rainyday.jpg";
 import rainyNight from "../assets/rainynight.jpg";
 import mistDay from "../assets/mistday.jpg";
 import mistNight from "../assets/mistnight.jpg";
+import fogDay from "../assets/foggyday.jpg";
+import fogNight from "../assets/foggynight.jpg";
 import defaultDay from "../assets/defaultday.jpg";
 import defaultNight from "../assets/defaultnight.jpg";
 import { kelvinToCelsius } from "../usedfunctions/temperaturConvert";
@@ -58,6 +60,7 @@ export default function TempCard({ data, tommrowSunrise }) {
     Mist: (
       <Image style={styles.imagestyle} source={mistDay} resizeMode="cover" />
     ),
+    Fog: <Image style={styles.imagestyle} source={fogDay} resizeMode="cover" />,
   };
 
   const NightImages = {
@@ -77,15 +80,20 @@ export default function TempCard({ data, tommrowSunrise }) {
     Mist: (
       <Image style={styles.imagestyle} source={mistNight} resizeMode="cover" />
     ),
+
+    Fog: (
+      <Image style={styles.imagestyle} source={fogNight} resizeMode="cover" />
+    ),
   };
-  console.log(typeof data.weather[0].main);
+
   const renderImage = () => {
     if (data.dt > data.sunrise && data.dt < data.sunset) {
       if (
         data.weather[0].main !== "Clear" &&
         data.weather[0].main !== "Clouds" &&
         data.weather[0].main !== "Mist" &&
-        data.weather[0].main !== "Rain"
+        data.weather[0].main !== "Rain" &&
+        data.weather[0].main !== "Fog"
       ) {
         return (
           <Image
@@ -102,7 +110,8 @@ export default function TempCard({ data, tommrowSunrise }) {
         data.weather[0].main !== "Clear" &&
         data.weather[0].main !== "Clouds" &&
         data.weather[0].main !== "Mist" &&
-        data.weather[0].main !== "Rain"
+        data.weather[0].main !== "Rain" &&
+        data.weather[0].main !== "Fog"
       ) {
         return (
           <Image

@@ -105,6 +105,8 @@ const Item = ({ item }) => {
       <MaterialCommunityIcons name="weather-sunny" size={24} color="white" />
     ),
     Mist: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
+
+    Fog: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
   };
 
   return (

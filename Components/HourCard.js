@@ -40,7 +40,6 @@ const Item = ({
   tommrowSunrise,
   tommrowSunSet,
 }) => {
-  console.log(item.dt);
   const DayIcons = {
     Rain: (
       <MaterialCommunityIcons name="weather-rainy" size={24} color="white" />
@@ -52,6 +51,11 @@ const Item = ({
       <MaterialCommunityIcons name="weather-sunny" size={24} color="white" />
     ),
     Mist: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
+    Haze: (
+      <MaterialCommunityIcons name="weather-hazy" size={24} color="white" />
+    ),
+
+    Fog: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
   };
 
   const NightIcons = {
@@ -69,6 +73,10 @@ const Item = ({
       <MaterialCommunityIcons name="weather-night" size={24} color="white" />
     ),
     Mist: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
+    Haze: (
+      <MaterialCommunityIcons name="weather-hazy" size={24} color="white" />
+    ),
+    Fog: <MaterialCommunityIcons name="weather-fog" size={24} color="white" />,
   };
 
   const renderIcon = () => {
